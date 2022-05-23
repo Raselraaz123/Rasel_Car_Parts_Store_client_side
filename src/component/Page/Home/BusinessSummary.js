@@ -55,8 +55,8 @@ const BusinessSummary = () => {
 
         <div className="stat">
           <div className="stat-figure text-secondary"></div>
-          <div className="stat-value">86%</div>
           <div className="stat-title">Client love it</div>
+          <div className="stat-value">86%</div>
           <div className="stat-desc text-secondary">
             We trying provide our bast facilities
           </div>

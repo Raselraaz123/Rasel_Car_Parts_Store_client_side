@@ -1,18 +1,16 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const OurProductInfo = ({ fast }) => {
-
+const PartsInfo = ({ product }) => {
+    const {
+      picture,
+      name,
+      Quantity,
+      price,
+      minOrderQuantity,
+      shortDescripttion,
+  } = product;
   const navigate = useNavigate();
-
-  const {
-    picture,
-    name,
-    Quantity,
-    price,
-    minOrderQuantity,
-    shortDescripttion,
-  } = fast;
   const handleParts = () => {
     navigate("/updateParts");
   }
@@ -23,7 +21,7 @@ const OurProductInfo = ({ fast }) => {
           className="w-full h-[250px] rounded-xl"
           src={picture}
           alt="img"
-        
+      
         />
       </figure>
       <div className="card-body items-center text-center">
@@ -38,7 +36,7 @@ const OurProductInfo = ({ fast }) => {
         </h3>
         <div className="card-actions">
           <button
-            onClick={handleParts}
+    onClick={handleParts}
             className="btn btn-primary">Buy Now</button>
         </div>
       </div>
@@ -46,4 +44,4 @@ const OurProductInfo = ({ fast }) => {
   );
 };
 
-export default OurProductInfo;
+export default PartsInfo;

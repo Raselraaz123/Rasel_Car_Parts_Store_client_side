@@ -56,14 +56,14 @@ const Navbar = () => {
               {manuItem}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost normal-case text-xl">
+            <img className="w-[50px]" src="https://i.ibb.co/HChFx94/apple-touch-icon.png" alt="logo" />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{manuItem}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Get started</a>
-        </div>
+       
       </div>
     </div>
   );
