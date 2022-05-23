@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const OurProductInfo = ({ fast }) => {
   // console.log(fast)
@@ -11,12 +11,17 @@ const OurProductInfo = ({ fast }) => {
     shortDescripttion,
   } = fast;
   return (
-    <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-      <figure class="px-10 pt-10">
-        <img className='w-full h-[250px]' src={picture} alt="img" class="rounded-xl" />
+    <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+      <figure className="px-10 pt-10">
+        <img
+          className="w-full h-[250px]"
+          src={picture}
+          alt="img"
+          className="rounded-xl"
+        />
       </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title">{name}</h2>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title">{name}</h2>
         <p>
           <small>{shortDescripttion}</small>
         </p>
@@ -25,8 +30,8 @@ const OurProductInfo = ({ fast }) => {
         <h3 className="text-2xl">
           Price: $ <span>{price}</span>
         </h3>
-        <div class="card-actions">
-          <button class="btn btn-primary">Buy Now</button>
+        <div className="card-actions">
+          <button className="btn btn-primary">Buy Now</button>
         </div>
       </div>
     </div>
@@ -34,5 +39,3 @@ const OurProductInfo = ({ fast }) => {
 };
 
 export default OurProductInfo;
-
- 

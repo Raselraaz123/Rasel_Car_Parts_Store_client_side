@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const ReviewInfo = ({ review }) => {
-  console.log(review);
-  const {name,picture,reviews,reviews_des} = review;
+  const { name, picture, reviews, reviews_des } = review;
   return (
-    <div class="card lg:max-w-lg bg-base-100 shadow-xl p-5">
-      <div class="card-body">
-        <h2 class="card-title text-2xl">{name}</h2>
+    <div className="card lg:max-w-lg bg-base-100 shadow-xl p-5">
+      <div className="card-body">
+        <h2 className="card-title text-2xl">{name}</h2>
         <p className="text-pink-300 font-semibold font-mono"> {reviews} </p>
         <p>
           <small>{reviews_des}</small>
