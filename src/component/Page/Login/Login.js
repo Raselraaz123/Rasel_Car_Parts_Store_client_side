@@ -30,16 +30,17 @@ const Login = () => {
   
     const navigate = useNavigate();
   const location = useLocation();
+
   let from = location.state?.from?.pathname || "/";
   
 
-  const [token] = useToken(user || user1||user2);
+  // const [token] = useToken(user || user1||user2);
 
   useEffect(() => {
-    if (token) {
+    if (user || user1 || user2) {
       navigate(from, { replace: true });
     }
-  }, [token, from, navigate]);
+  }, [user , user1, user2, from, navigate]);
   
   
     let SignInError;
@@ -54,9 +55,7 @@ const Login = () => {
       );
   }
   
-  if (user || user1 || user2) {
-    console.log(user || user1 || user2);
-  }
+
   
     const onSubmit = (data) => {
       signInWithEmailAndPassword(data.email, data.password);
@@ -64,22 +63,22 @@ const Login = () => {
     };
   return (
     <div className="flex justify-center mt-28">
-      <div class="card w-1/2  bg-base-100 shadow-2xl">
-        <h1 className="text-center font-bold text-2xl mt-5">Login</h1>;
-        <div class="card-body items-center text-center">
+      <div class=" bg-base-100 shadow-2xl">
+        <h1 className="text-center font-bold text-2xl mt-5">Login</h1>
+        <div class="items-center text-center px-12">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className=" flex flex-col justify-center 
          "
           >
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
                 placeholder="Enter your Email"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered "
                 {...register("email", {
                   required: {
                     value: true,
@@ -104,14 +103,14 @@ const Login = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
                 type="password"
                 placeholder="Enter your Password"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered "
                 {...register("password", {
                   required: {
                     value: true,
@@ -137,11 +136,13 @@ const Login = () => {
               </label>
             </div>
             {SignInError}
-            <input
-              className="btn w-full max-w-xs mb-5"
-              type="submit"
-              value="Login"
-            />
+            <div>
+              <input
+                className="btn btn-outline font-bold text-xl w-full  max-w-xs mb-5"
+                type="submit"
+                value="Login"
+              />
+            </div>
           </form>
           <div>
             <p className="">

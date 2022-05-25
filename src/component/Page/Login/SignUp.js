@@ -62,22 +62,22 @@ const SignUp = () => {
 
   return (
     <div className="flex justify-center mt-28">
-      <div class="card w-1/2  bg-base-100 shadow-2xl">
+      <div class="  bg-base-100 shadow-2xl">
         <h1 className="text-center font-bold text-2xl mt-5">Sign Up</h1>;
-        <div class="card-body items-center text-center">
+        <div class=" items-center text-center px-12">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className=" flex flex-col justify-center 
          "
           >
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
               <input
                 type="text"
                 placeholder="Enter your Name"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered "
                 {...register("name", {
                   required: {
                     value: true,
@@ -94,14 +94,14 @@ const SignUp = () => {
               </label>
             </div>
 
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
                 placeholder="Enter your Email"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered"
                 {...register("email", {
                   required: {
                     value: true,
@@ -127,14 +127,14 @@ const SignUp = () => {
               </label>
             </div>
 
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
                 type="password"
                 placeholder="Enter your Password"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered "
                 {...register("password", {
                   required: {
                     value: true,
@@ -160,11 +160,13 @@ const SignUp = () => {
               </label>
             </div>
             {SignInError}
-            <input
-              className="btn w-full max-w-xs mb-5"
-              type="submit"
-              value="Login"
-            />
+            <div>
+              <input
+                className="btn btn-outline font-bold text-xl w-full  max-w-xs mb-5"
+                type="submit"
+                value="Sign Up"
+              />
+            </div>
           </form>
           <div>
             <p className="">

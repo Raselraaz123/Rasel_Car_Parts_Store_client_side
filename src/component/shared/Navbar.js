@@ -21,9 +21,11 @@ const Navbar = () => {
       <li>
         <Link to="/review">Add review</Link>
       </li>
-      <li>
+      {
+        user ? <li>
         <Link to="/dashboard">Dashboard</Link>
-      </li>
+      </li>:  ""
+    }
       <li>
         <Link to="/profile">My Profile</Link>
       </li>
