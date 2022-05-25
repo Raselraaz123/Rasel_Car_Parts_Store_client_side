@@ -1,6 +1,7 @@
 import React from 'react';
 import useProduct from '../../hooks/useProduct';
 import PartsInfo from './PartsInfo';
+import Footer from '../../shared/Footer'
 
 const Parts = () => {
    const [products, setProducts] = useProduct();
@@ -14,6 +15,7 @@ const Parts = () => {
           <PartsInfo key={product._id} product={product}></PartsInfo>
         ))}
       </div>
+      <Footer></Footer>
     </div>
   );
 };
