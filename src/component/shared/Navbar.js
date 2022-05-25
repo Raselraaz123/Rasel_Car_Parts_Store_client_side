@@ -21,13 +21,18 @@ const Navbar = () => {
       <li>
         <Link to="/review">Add review</Link>
       </li>
-      {
-        user ? <li>
-        <Link to="/dashboard">Dashboard</Link>
-      </li>:  ""
-    }
+      {user ? (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      ) : (
+        ""
+      )}
       <li>
         <Link to="/profile">My Profile</Link>
+      </li>
+      <li>
+        <Link to="/blogs">Blogs</Link>
       </li>
       <li>
         <Link to="/about">About us</Link>
