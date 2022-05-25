@@ -62,8 +62,8 @@ const Login = () => {
       console.log(data.email ,data.password)
     };
   return (
-    <div className="flex justify-center mt-28">
-      <div class=" bg-base-100 shadow-2xl">
+    <div className="flex justify-center mt-28 ">
+      <div class=" bg-base-100 rounded-2xl shadow-2xl">
         <h1 className="text-center font-bold text-2xl mt-5">Login</h1>
         <div class="items-center text-center px-12">
           <form
@@ -161,7 +161,7 @@ const Login = () => {
             </button>
             <button
               onClick={() => signInWithFacebook()}
-              className="btn  btn-outline w-full "
+              className="btn  btn-outline w-full mb-5 "
             >
               Continue with facebook
               <img src="https://i.ibb.co/WWx4Gtx/facebook.png" alt="" />

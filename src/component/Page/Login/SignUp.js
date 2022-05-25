@@ -20,50 +20,49 @@ const SignUp = () => {
   } = useForm();
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
- const [signInWithFacebook, user2, loading2, error2] =
+  const [signInWithFacebook, user2, loading2, error2] =
     useSignInWithFacebook(auth);
-  
+
   const [createUserWithEmailAndPassword, user1, loading1, error1] =
     useCreateUserWithEmailAndPassword(auth);
-  
- 
-  
+
   const [updateProfile, updating, upDateError] = useUpdateProfile(auth);
-  
+
   const [token] = useToken(user || user1 || user2);
   const navigate = useNavigate();
 
-
-
   let SignInError;
-  if (loading || loading1 || loading2 ||updating) {
+  if (loading || loading1 || loading2 || updating) {
     return <Loading></Loading>;
   }
-  if (error || error1 || error2||upDateError) {
+  if (error || error1 || error2 || upDateError) {
     SignInError = (
       <p className="text-red-500 mb-2 mt-2">
-        {error?.message || error1?.message || error2?.message||upDateError?.message}
+        {error?.message ||
+          error1?.message ||
+          error2?.message ||
+          upDateError?.message}
       </p>
     );
   }
   // if (token) {
-   
+
   // }
   if (user || user1 || user2) {
     console.log(user || user1 || user2);
   }
 
-  const onSubmit = async(data) => {
-     await createUserWithEmailAndPassword(data.email, data.password);
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-     navigate("/updateParts");
-    console.log(data.email,data.password,data.name)
+    navigate("/updateParts");
+    console.log(data.email, data.password, data.name);
   };
 
   return (
     <div className="flex justify-center mt-28">
       <div class="  bg-base-100 shadow-2xl">
-        <h1 className="text-center font-bold text-2xl mt-5">Sign Up</h1>;
+        <h1 className="text-center font-bold text-2xl mt-5">Sign Up</h1>
         <div class=" items-center text-center px-12">
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -185,7 +184,7 @@ const SignUp = () => {
             </button>
             <button
               onClick={() => signInWithFacebook()}
-              className="btn  btn-outline w-full "
+              className="btn  btn-outline w-full mb-5"
             >
               Continue with facebook
               <img src="https://i.ibb.co/WWx4Gtx/facebook.png" alt="" />
