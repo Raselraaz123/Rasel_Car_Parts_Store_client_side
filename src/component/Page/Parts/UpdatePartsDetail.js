@@ -18,7 +18,7 @@ const UpdatePartsDetail = () => {
             />
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="card-title">Shoes : {partsId}</h2>
+            <h2 class="card-title">ID: {partsId}</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions">
               <button class="btn btn-primary">Buy Now</button>

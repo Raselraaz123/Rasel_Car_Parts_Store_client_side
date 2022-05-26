@@ -9,6 +9,7 @@ import Home from './component/Page/Home/Home';
 import Login from './component/Page/Login/Login';
 import RequireAuth from './component/Page/Login/RequireAuth';
 import SignUp from './component/Page/Login/SignUp';
+import MyPortfolio from './component/Page/MyPortfolio/MyPortfolio';
 import Parts from './component/Page/Parts/Parts';
 import UpdateParts from './component/Page/Parts/UpdatePartsDetail';
 
@@ -24,12 +25,11 @@ function App() {
         <Route path="/parts" element={<Parts></Parts>}></Route>
         <Route
           path="/partsInfo/:partsId"
-          element={
-              <UpdateParts></UpdateParts>
-          }
+          element={<UpdateParts></UpdateParts>}
         ></Route>
         <Route path="/review" element={<AddReview></AddReview>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+        <Route path="/myportfolio" element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>

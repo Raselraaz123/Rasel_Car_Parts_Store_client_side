@@ -29,7 +29,7 @@ const Navbar = () => {
         ""
       )}
       <li>
-        <Link to="/profile">My Profile</Link>
+        <Link to="/myportfolio">My Portfolio</Link>
       </li>
       <li>
         <Link to="/blogs">Blogs</Link>
