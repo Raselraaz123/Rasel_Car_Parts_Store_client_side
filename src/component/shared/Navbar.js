@@ -39,7 +39,7 @@ const Navbar = () => {
       </li>
       {user ? (
         <li>
-          <button onClick={logout} class="btn btn-ghost">
+          <button onClick={logout} class="btn btn-ghost font-bold">
             SignOut
           </button>
         </li>

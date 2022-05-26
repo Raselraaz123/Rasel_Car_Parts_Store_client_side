@@ -12,6 +12,7 @@ import SignUp from './component/Page/Login/SignUp';
 import MyPortfolio from './component/Page/MyPortfolio/MyPortfolio';
 import Parts from './component/Page/Parts/Parts';
 import UpdateParts from './component/Page/Parts/UpdatePartsDetail';
+import Purchase from './component/Page/Purchase/Purchase';
 
 import Navbar from './component/shared/Navbar';
 import NotFound from './component/shared/NotFound';
@@ -27,9 +28,20 @@ function App() {
           path="/partsInfo/:partsId"
           element={<UpdateParts></UpdateParts>}
         ></Route>
+        <Route
+          path="/purchase"
+          element={
+            <RequireAuth>
+              <Purchase></Purchase>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/review" element={<AddReview></AddReview>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
-        <Route path="/myportfolio" element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route
+          path="/myportfolio"
+          element={<MyPortfolio></MyPortfolio>}
+        ></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>

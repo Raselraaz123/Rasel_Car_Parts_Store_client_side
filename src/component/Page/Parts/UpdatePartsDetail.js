@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const UpdatePartsDetail = () => {
   const { partsId } = useParams();
@@ -20,25 +20,48 @@ const UpdatePartsDetail = () => {
           <div class="card-body items-center text-center">
             <h2 class="card-title">ID: {partsId}</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions">
-              <button class="btn btn-primary">Buy Now</button>
-            </div>
           </div>
         </div>
 
         <div class="card w-3/12 bg-amber-200 shadow-xl">
-          <figure class="px-10 pt-10">
-            <img
-              src="https://api.lorem.space/image/shoes?w=400&h=225"
-              alt="Shoes"
-              class="rounded-xl"
-            />
-          </figure>
           <div class="card-body items-center text-center">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <h2 class=" text-xl font-bold ">Place your order quantity</h2>
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text">Total Quantity</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Type here"
+                disabled
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text">Your Order Quantity</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text">Minimum Order Quantity</span>
+              </label>
+              <input
+                type="text"
+                disabled
+                placeholder="Type here"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
             <div class="card-actions">
-              <button class="btn btn-primary">Buy Now</button>
+              <Link to="/purchase">
+                <button class="btn btn-primary">Purchase Now</button>
+              </Link>
             </div>
           </div>
         </div>
