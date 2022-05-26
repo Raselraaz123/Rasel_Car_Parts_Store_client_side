@@ -6,6 +6,7 @@ const OurProductInfo = ({ fast }) => {
   const navigate = useNavigate();
 
   const {
+    _id,
     picture,
     name,
     Quantity,
@@ -13,18 +14,13 @@ const OurProductInfo = ({ fast }) => {
     minOrderQuantity,
     shortDescripttion,
   } = fast;
-  const handleParts = () => {
-    navigate("/updateParts");
+  const handleParts = (id) => {
+   navigate(`/partsInfo/${_id}`);
   }
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <img
-          className="w-full h-[250px] rounded-xl"
-          src={picture}
-          alt="img"
-        
-        />
+        <img className="w-full h-[250px] rounded-xl" src={picture} alt="img" />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{name}</h2>
@@ -37,9 +33,9 @@ const OurProductInfo = ({ fast }) => {
           Price: $ <span>{price}</span>
         </h3>
         <div className="card-actions">
-          <button
-            onClick={handleParts}
-            className="btn btn-primary">Buy Now</button>
+          <button onClick={() => handleParts(_id)} className="btn btn-primary">
+            Buy Now
+          </button>
         </div>
       </div>
     </div>

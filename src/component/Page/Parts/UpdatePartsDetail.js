@@ -1,6 +1,9 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const UpdateParts = () => {
+const UpdatePartsDetail = () => {
+  const { partsId } = useParams();
+  console.log(partsId);
   return (
     <div>
       <h1 className="text-center text-2xl font-bold mt-5">Up date parts</h1>
@@ -15,7 +18,7 @@ const UpdateParts = () => {
             />
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="card-title">Shoes!</h2>
+            <h2 class="card-title">Shoes : {partsId}</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions">
               <button class="btn btn-primary">Buy Now</button>
@@ -44,4 +47,4 @@ const UpdateParts = () => {
   );
 };
 
-export default UpdateParts;
+export default UpdatePartsDetail;

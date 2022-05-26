@@ -10,7 +10,8 @@ import Login from './component/Page/Login/Login';
 import RequireAuth from './component/Page/Login/RequireAuth';
 import SignUp from './component/Page/Login/SignUp';
 import Parts from './component/Page/Parts/Parts';
-import UpdateParts from './component/Page/Parts/UpdateParts';
+import UpdateParts from './component/Page/Parts/UpdatePartsDetail';
+
 import Navbar from './component/shared/Navbar';
 import NotFound from './component/shared/NotFound';
 
@@ -22,16 +23,14 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/parts" element={<Parts></Parts>}></Route>
         <Route
-          path="/updateParts"
+          path="/partsInfo/:partsId"
           element={
-            <RequireAuth>
               <UpdateParts></UpdateParts>
-            </RequireAuth>
           }
         ></Route>
-        <Route path='/review' element={<AddReview></AddReview>}></Route>
-        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
-        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path="/review" element={<AddReview></AddReview>}></Route>
+        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>

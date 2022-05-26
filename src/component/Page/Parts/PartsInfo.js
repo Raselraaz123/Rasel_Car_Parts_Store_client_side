@@ -2,7 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const PartsInfo = ({ product }) => {
-    const {
+  const {
+      _id,
       picture,
       name,
       Quantity,
@@ -11,8 +12,8 @@ const PartsInfo = ({ product }) => {
       shortDescripttion,
   } = product;
   const navigate = useNavigate();
-  const handleParts = () => {
-    navigate("/updateParts");
+  const handleParts = id => {
+    navigate(`/partsInfo/${_id}`);
   }
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
@@ -36,7 +37,7 @@ const PartsInfo = ({ product }) => {
         </h3>
         <div className="card-actions">
           <button
-    onClick={handleParts}
+    onClick={()=>handleParts(_id)}
             className="btn btn-primary">Buy Now</button>
         </div>
       </div>
