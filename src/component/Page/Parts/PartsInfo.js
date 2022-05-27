@@ -13,7 +13,7 @@ const PartsInfo = ({ product }) => {
   } = product;
   const navigate = useNavigate();
   const handleParts = id => {
-    navigate(`/partsInfo/${_id}`);
+    navigate(`/partsInfo/${id}`);
   }
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
