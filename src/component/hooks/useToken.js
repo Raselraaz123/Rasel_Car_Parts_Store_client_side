@@ -5,6 +5,7 @@ const useToken = (user) => {
   useEffect(() => {
   
     const email = user?.user?.email;
+    console.log(user)
     const currentUser = { email: email };
     if (email) {
       fetch(`https://fierce-reaches-52632.herokuapp.com/user/${email}`, {

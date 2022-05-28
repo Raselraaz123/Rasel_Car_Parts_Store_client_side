@@ -45,18 +45,16 @@ const SignUp = () => {
       </p>
     );
   }
-  // if (token) {
-
-  // }
-  if (user || user1 || user2) {
-    console.log(user || user1 || user2);
+  if(token) {
+  navigate("/parts");
   }
+ 
 
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    navigate("/updateParts");
-    console.log(data.email, data.password, data.name);
+
+    // console.log(data.email, data.password, data.name);
   };
 
   return (

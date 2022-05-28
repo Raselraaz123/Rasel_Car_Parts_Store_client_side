@@ -26,10 +26,21 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/parts" element={<Parts></Parts>}></Route>
+        <Route
+          path="/parts"
+          element={
+            <RequireAuth>
+              <Parts></Parts>
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/partsInfo/:partsId"
-          element={<UpdateParts></UpdateParts>}
+          element={
+            <RequireAuth>
+              <UpdateParts></UpdateParts>
+            </RequireAuth>
+          }
         ></Route>
         <Route
           path="/purchase/:partsId"
