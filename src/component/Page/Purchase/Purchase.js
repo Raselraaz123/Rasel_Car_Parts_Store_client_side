@@ -20,12 +20,13 @@ const [user, loading] = useAuthState(auth);
   const handlePurchaseOrder = (event) => {
     event.preventDefault();
     const order = {
-      email: user.email,
-      parts: product.name,
+      name:user?.displayName,
+      email: user?.email,
+      parts: product?.name,
       partsId: partsId,
-      address: event.target.address.value,
-      phone: event.target.phone.value,
-      OrderQuantity: event.target.yourorderquantity.value,
+      address: event?.target?.address?.value,
+      phone: event?.target?.phone?.value,
+      OrderQuantity: event?.target?.yourorderquantity?.value,
     };
     axios
       .post("https://fierce-reaches-52632.herokuapp.com/order", order)

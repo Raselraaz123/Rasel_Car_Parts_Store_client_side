@@ -86,7 +86,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{manuItem}</ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end ">
           <label
             tabIndex="1"
             for="dashboard-sidebar"

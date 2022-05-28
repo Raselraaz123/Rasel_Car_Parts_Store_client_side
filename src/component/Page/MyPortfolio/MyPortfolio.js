@@ -7,7 +7,7 @@ const MyPortfolio = () => {
       <h1 className="text-center text-lime-300 font-bold text-3xl mt-20 mb-5">
         My Portfolio
       </h1>
-      <div class="hero min-h-screen  ">
+      <div class="hero   ">
         <div class="hero-content flex-col lg:flex-row ">
           <img
             src="https://i.ibb.co/Jcp1LMj/rasel2-removebg-preview.png"
@@ -57,13 +57,6 @@ const MyPortfolio = () => {
           </div>
         </div>
       </div>
-
-      {/* <div class="card  bg-base-100 shadow-2xl">
-        <figure class="px-10 pt-10">
-          <img src="" class="rounded-xl" />
-        </figure>
-        <div class="card-body items-center text-center"></div>
-      </div> */}
     </div>
   );
 };

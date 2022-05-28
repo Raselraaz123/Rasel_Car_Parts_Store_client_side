@@ -7,6 +7,7 @@ import AddReview from './component/Page/AddReview/AddReview';
 import Blogs from './component/Page/Blogs/Blogs';
 import Dashboard from './component/Page/Dashboard/Dashboard';
 import MyOrders from './component/Page/Dashboard/MyOrders';
+import MyProfile from './component/Page/Dashboard/MyProfile';
 import Home from './component/Page/Home/Home';
 import Login from './component/Page/Login/Login';
 import RequireAuth from './component/Page/Login/RequireAuth';
@@ -49,6 +50,7 @@ function App() {
         >
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route
           path="/myportfolio"

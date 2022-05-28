@@ -1,73 +1,65 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
-const AddReview = () => {
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
+import auth from '../../../firebase.init';
 
-   const {register, handleSubmit} = useForm();
-  const onSubmit = (data) => {
-    console.log(data)
-    const url = `http://localhost:5000/review`;
-    fetch(url, {
-      method: "POST",
-      headers: {
-        'content-type':'application/json'
-      },
-      body:JSON.stringify(data)
-    })
-      .then(res => res.json())
-      .then(result => {
-      console.log(result)
-    })
-    
-  };
+const MyProfile = () => {
+  const [user, loading] = useAuthState(auth);
+  console.log(user)
+    const {register, handleSubmit} = useForm();
+  const onSubmit = (data) =>console.log(data)
   return (
     <div>
       <div className="flex justify-center mt-5">
         <div class="card w-full lg:max-w-lg bg-from-500 shadow-2xl">
           <div class="card-body">
             <h2 class=" text-center text-3xl font-bold text-fuchsia-400 ">
-              Add your Review
+           My Profile
             </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div class="form-control w-full max-w-xs">
                 <label class="label">
-                  <span class="label-text"> Your Name</span>
+                  <span class="label-text"> Name</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Name"
+                  disabled
+                  value={user.displayName}
                   {...register("name")}
                   class="input input-bordered w-full max-w-xs"
                 />
               </div>
               <div class="form-control w-full max-w-xs">
                 <label class="label">
-                  <span class="label-text">photo url</span>
+                  <span class="label-text">Email</span>
                 </label>
                 <input
                   type="text"
-                  {...register("picture")}
+                  disabled
+                  value={user.email}
+                  {...register("email")}
                   class="input input-bordered w-full max-w-xs"
                 />
               </div>
               <div class="form-control w-full max-w-xs">
                 <label class="label">
-                  <span class="label-text">Rating and review</span>
+                  <span class="label-text">phone</span>
                 </label>
                 <input
-                  type="text"
-                  placeholder="please Enter Rating"
-                  {...register("reviews")}
+                  type="number"
+                  placeholder="Enter phone number"
+                  {...register("phone")}
                   class="input input-bordered w-full max-w-xs"
                 />
               </div>
               <div class="form-control w-full max-w-xs">
                 <label class="label">
-                  <span class="label-text">Add your comment</span>
+                  <span class="label-text">address</span>
                 </label>
                 <textarea
                   class="textarea textarea-success"
-                  placeholder="please add same text"
-                  {...register("reviews_des")}
+                  placeholder="Enter your address"
+                  {...register("address")}
                 ></textarea>
               </div>
 
@@ -87,7 +79,4 @@ const AddReview = () => {
   );
 };
 
-export default AddReview;
-
-
- 
+export default MyProfile;
