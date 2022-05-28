@@ -2,12 +2,16 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
+import Loading from '../../shared/Loading';
 
 const MyProfile = () => {
   const [user, loading] = useAuthState(auth);
   console.log(user)
     const {register, handleSubmit} = useForm();
-  const onSubmit = (data) =>console.log(data)
+  const onSubmit = (data) => console.log(data)
+  if (loading) {
+    return <Loading></Loading>
+  }
   return (
     <div>
       <div className="flex justify-center mt-5">
@@ -24,7 +28,7 @@ const MyProfile = () => {
                 <input
                   type="text"
                   disabled
-                  value={user.displayName}
+                  value={user?.displayName}
                   {...register("name")}
                   class="input input-bordered w-full max-w-xs"
                 />
@@ -36,7 +40,7 @@ const MyProfile = () => {
                 <input
                   type="text"
                   disabled
-                  value={user.email}
+                  value={user?.email}
                   {...register("email")}
                   class="input input-bordered w-full max-w-xs"
                 />
