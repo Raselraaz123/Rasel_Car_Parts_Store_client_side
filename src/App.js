@@ -1,5 +1,6 @@
 
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import About from './component/Page/About/About';
 import AddReview from './component/Page/AddReview/AddReview';
@@ -29,7 +30,7 @@ function App() {
           element={<UpdateParts></UpdateParts>}
         ></Route>
         <Route
-          path="/purchase"
+          path="/purchase/:partsId"
           element={
             <RequireAuth>
               <Purchase></Purchase>
@@ -48,6 +49,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
