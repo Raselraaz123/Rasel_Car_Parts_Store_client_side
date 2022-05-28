@@ -1,3 +1,37 @@
+# Rasel Car Parts Store
+
+## [our website link](https://rasel-car-parts-store.web.app/)
+
+
+- Many types of technology are used in this website so that a user gets a good experience
+
+- Some of the technologies are named below
+
+- firebase
+- mongodb
+- Heroku
+- react
+- tailwind css
+- daisy Ui
+- react-firebase-hooks
+- react-hook-form
+- react-query
+- react-toastify
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
