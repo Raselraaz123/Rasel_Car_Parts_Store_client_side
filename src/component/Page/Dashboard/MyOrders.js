@@ -12,23 +12,26 @@ const MyOrders = () => {
   console.log(orders)
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?email=${user.email}`, {
-        method: 'GET',
-        headers: {
-          'authorization':`Bearer ${localStorage.getItem('accessToken')}`
+      fetch(
+        `https://fierce-reaches-52632.herokuapp.com/order?email=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
         }
-      })
+      )
         .then((res) => {
-          console.log("res", res)
+          console.log("res", res);
           if (res.status === 401 || res.status === 403) {
-                signOut(auth);
-                localStorage.removeItem("accessToken");
-            navigate('/')
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            navigate("/");
           }
-       return   res.json()
+          return res.json();
         })
         .then((data) => {
-          setOrders(data)
+          setOrders(data);
         });
     }
   },[user])
