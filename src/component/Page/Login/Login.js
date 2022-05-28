@@ -26,7 +26,7 @@ const Login = () => {
   
     const [signInWithEmailAndPassword, user1, loading1, error1] =
     useSignInWithEmailAndPassword(auth);
-  
+   const [token] = useToken(user || user1 || user2);
   
     const navigate = useNavigate();
   const location = useLocation();
@@ -34,13 +34,13 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   
 
-  // const [token] = useToken(user || user1||user2);
+ 
 
   useEffect(() => {
-    if (user || user1 || user2) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [user , user1, user2, from, navigate]);
+  }, [token, from, navigate]);
   
   
     let SignInError;
