@@ -5,7 +5,7 @@ const useUpDatePartsDetail = (partsId) => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/${partsId}`;
+    const url = `https://fierce-reaches-52632.herokuapp.com/product/${partsId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));

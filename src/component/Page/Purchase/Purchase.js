@@ -27,14 +27,16 @@ const [user, loading] = useAuthState(auth);
       phone: event.target.phone.value,
       OrderQuantity: event.target.yourorderquantity.value,
     };
-    axios.post("http://localhost:5000/order", order).then((res) => {
-      console.log(res);
-      const { data } = res;
-      if (data.insertedId) {
-        toast('your order is booked');
-        event.target.reset()
-      }
-    });
+    axios
+      .post("https://fierce-reaches-52632.herokuapp.com/order", order)
+      .then((res) => {
+        console.log(res);
+        const { data } = res;
+        if (data.insertedId) {
+          toast("your order is booked");
+          event.target.reset();
+        }
+      });
   };
 
   return (
