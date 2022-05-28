@@ -32,6 +32,11 @@ const Dashboard = () => {
                 My Profile
               </Link>
             </li>
+            <li>
+              <Link className="text-white font-bold" to="/dashboard/allusers">
+               All Users
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

@@ -5,6 +5,7 @@ import './App.css';
 import About from './component/Page/About/About';
 import AddReview from './component/Page/AddReview/AddReview';
 import Blogs from './component/Page/Blogs/Blogs';
+import AllUsers from './component/Page/Dashboard/AllUsers';
 import Dashboard from './component/Page/Dashboard/Dashboard';
 import MyOrders from './component/Page/Dashboard/MyOrders';
 import MyProfile from './component/Page/Dashboard/MyProfile';
@@ -62,6 +63,7 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="allusers" element={<AllUsers></AllUsers>}></Route>
         </Route>
         <Route
           path="/myportfolio"
