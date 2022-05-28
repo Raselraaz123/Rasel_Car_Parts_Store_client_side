@@ -6,6 +6,7 @@ import About from './component/Page/About/About';
 import AddReview from './component/Page/AddReview/AddReview';
 import Blogs from './component/Page/Blogs/Blogs';
 import Dashboard from './component/Page/Dashboard/Dashboard';
+import MyOrders from './component/Page/Dashboard/MyOrders';
 import Home from './component/Page/Home/Home';
 import Login from './component/Page/Login/Login';
 import RequireAuth from './component/Page/Login/RequireAuth';
@@ -37,8 +38,18 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="/review" element={<AddReview></AddReview>}></Route>
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+            </RequireAuth>
+          }
+        >
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="review" element={<AddReview></AddReview>}></Route>
+        </Route>
         <Route
           path="/myportfolio"
           element={<MyPortfolio></MyPortfolio>}

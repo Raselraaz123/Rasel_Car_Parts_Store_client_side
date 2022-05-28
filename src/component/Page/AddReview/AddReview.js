@@ -9,8 +9,8 @@ const AddReview = () => {
   return (
     <div>
     
-      <div className="flex justify-center mt-28">
-        <div class="card w-1/2 lg:max-w-lg bg-from-500 shadow-2xl">
+      <div className="flex justify-center mt-5">
+        <div class="card  lg:max-w-lg bg-from-500 shadow-2xl">
           <div class="card-body">
             <h2 class=" text-center text-3xl font-bold text-fuchsia-400 ">
        
@@ -34,6 +34,16 @@ const AddReview = () => {
                 <input
                   type="text"
                   placeholder="Email"
+                  class="input input-bordered w-full max-w-xs"
+                />
+              </div>
+              <div class="form-control w-full max-w-xs">
+                <label class="label">
+                  <span class="label-text">Rating and review</span>
+                </label>
+                <input
+                  type="number"
+                  placeholder="please Enter Rating"
                   class="input input-bordered w-full max-w-xs"
                 />
               </div>

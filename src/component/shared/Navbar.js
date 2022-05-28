@@ -18,16 +18,12 @@ const Navbar = () => {
       <li>
         <Link to="/parts">Parts Item</Link>
       </li>
-      <li>
-        <Link to="/review">Add review</Link>
-      </li>
-      {user ? (
+      
+      {user  &&
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
-      ) : (
-        ""
-      )}
+     }
       <li>
         <Link to="/myportfolio">My Portfolio</Link>
       </li>
@@ -39,7 +35,7 @@ const Navbar = () => {
       </li>
       {user ? (
         <li>
-          <button onClick={logout} class="btn btn-ghost font-bold">
+          <button onClick={logout} class="  pl-4 font-bold">
             SignOut
           </button>
         </li>
@@ -80,13 +76,40 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">
-            <img className="w-[50px]" src="https://i.ibb.co/HChFx94/apple-touch-icon.png" alt="logo" />
+            <img
+              className="w-[50px]"
+              src="https://i.ibb.co/HChFx94/apple-touch-icon.png"
+              alt="logo"
+            />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{manuItem}</ul>
         </div>
-       
+        <div className="navbar-end">
+          <label
+            tabIndex="1"
+            for="dashboard-sidebar"
+            className="btn btn-ghost lg:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+
+         
+        </div>
       </div>
     </div>
   );
