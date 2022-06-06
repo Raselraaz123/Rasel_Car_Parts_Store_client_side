@@ -6,6 +6,7 @@ import OurProduct from './OurProduct';
 import Review from './Review';
 
 const Home = () => {
+  // this is home page
   return (
     <div>
       <Banner></Banner>
